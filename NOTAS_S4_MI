@@ -1,0 +1,43 @@
+
+package validacion;
+import java.util.Scanner;
+public class Validacion {
+    
+    public static void main(String[] args) {
+        Scanner sc=new Scanner (System.in);
+        String variable,tipo;
+        System.out.print("REGISTRE DATO: ");
+        variable=sc.nextLine();
+        int entero;
+        Double real;
+        Boolean booleano;
+        
+        try{
+            entero=Integer.parseInt(variable);
+            tipo=((Object)entero).getClass().getSimpleName();
+            System.out.println(tipo);
+        }
+        catch(Exception e){
+            System.out.println("NO ES ENTERO");
+        }
+        try{
+            real=Double.parseDouble(variable);
+            tipo=((Object)real).getClass().getSimpleName();
+            System.out.println(tipo);
+        }
+        catch(Exception e){
+            System.out.println("NO ES REAL");
+        }
+        
+        /*
+        try{
+            booleano=Boolean.parseBoolean(variable);
+            tipo=((Object)booleano).getClass().getSimpleName();
+            System.out.println(tipo);
+        }
+        catch(Exception e){
+            System.out.println("NO ES BOOLEANDO");
+        }*/
+    }
+    
+}
